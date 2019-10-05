@@ -7,24 +7,26 @@ export default class SearchSuggestionContainer extends Component {
         super(props);
         this.state = {
             suggested_items : [],
-            current_focus : 0
+            current_focus : 0,
+            clear_items : false
         }
         this.suggestionClick = this.suggestionClick.bind(this);
     }
     static selectionLength = 0;
     static inputRef;
 
-    componentDidMount(){
-        if(this.props){
-            let { items = [], keyCode = 0 } = this.props;
-            this.setState({ suggested_items : items, current_focus : keyCode })
-        }
-    }
     static getDerivedStateFromProps(nextProps, prevState){
-        let { keyCode } = nextProps;              
+        let { keyCode, items = [] } = nextProps;             
+        if(prevState.clear_items){
+            return {
+                ...prevState,
+                clear_items : false
+            };
+        }
         return {
             ...prevState,
-            ...SearchSuggestionContainer.suggestionKeyPress(keyCode, prevState)
+            ...SearchSuggestionContainer.suggestionKeyPress(keyCode, prevState),
+            suggested_items : items
         };
     
     }
@@ -51,14 +53,14 @@ export default class SearchSuggestionContainer extends Component {
     }
 
     suggestionClick = (val) =>{
-        this.props.selectedItem(val)
+        this.props.selectedItem(val);        
         this.removeAllList();
     }
 
     removeAllList = () => {
-        this.setState({ suggested_items : [] });
+        this.setState({ suggested_items : [], clear_items : true });
     }
-    render(){      
+    render(){  
         return (
             <SearchSuggestionComponent
                 {...this.props}

@@ -1,5 +1,5 @@
-import React from 'react';
 import SearchSuggestionContainer from './search-suggestion-container';
+import './search-suggestion.css';
 
 export default SearchSuggestionContainer;
 // import React, { Component } from 'react';

@@ -9,7 +9,7 @@ export default class SearchComponent extends Component {
                     value={this.props.searchKey}
                     onKeyDown={this.props.handleKeyDown}
                     onChange={this.props.onSearchKeyChange} 
-                    placeholder="Search key" />
+                    placeholder="Search" />
             </div>
         );
     }

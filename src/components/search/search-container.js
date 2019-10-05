@@ -36,7 +36,7 @@ export default class SearchContainer extends Component {
         return (   
             <div className="search-container">        
                 <p className="search-header">
-                    <img src="https://thenextbid.com/eeb9b1a373fc912868daaa578bb7ccc0.svg" className="logo" />
+                    <img alt="TheNextBid" src="https://thenextbid.com/eeb9b1a373fc912868daaa578bb7ccc0.svg" className="logo" />
                     <strong>Search Engine</strong>
                 </p>
                 <form autoComplete="off">
@@ -47,7 +47,7 @@ export default class SearchContainer extends Component {
                             handleKeyDown={this.handleKeyDown}
                             onSearchKeyChange={this.handleSearchKeyChange}                    
                         />
-                        <SearchSuggestion                        
+                        <SearchSuggestion            
                             items={this.state.result.suggestions} 
                             searchKey={this.state.search_key} 
                             keyCode={this.state.keyCode}

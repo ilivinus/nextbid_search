@@ -37,3 +37,10 @@
      * **Reason :** This is to ensure one source of truth for the applicatio configuration.
 6.   * **Choice :** Always grouped the *css*, *container*, *component*, *test* of a particular component in one folder.
      * **Reason :** This is for easy module referencing and confusion reduction especially when it comes to  identifying what asset belongs to which component.
+7.  * **Choice :** I used only frontend framework
+    * **Reason :** There is no API Key to warrant using backend technology for security reasons since the web API is open.
+
+8.  * **Choice :** I used reactjs
+    * **Reason :** It is open source and simplifies creating of reusable components.
+9.  * **Choice :** I did not use redux or any other state managment library.
+    * **Reason :** This is a small application and sharing of state between components that are far apart in the component tree is not experienced. Again I wanted to keep things simple.

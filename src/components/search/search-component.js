@@ -8,8 +8,9 @@ export default function SearchComponent(props){
                     value={props.searchKey}
                     onKeyDown={props.handleKeyDown}
                     onChange={props.onSearchKeyChange} 
-                    placeholder="Search..." />                    
-                    <button type="submit" onClick={props.handleSubmit} className="sb-button">Submit</button>
+                    placeholder="Search..." />  
+                    {props.loading ? <div className="loading-icon"></div>                  
+                    : <button onClick={props.handleSubmit} className="sb-button">Submit</button>}
             </div>
         );
 }

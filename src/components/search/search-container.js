@@ -60,7 +60,8 @@ export default class SearchContainer extends Component {
                             searchKey={this.state.search_key}
                             handleKeyDown={this.handleKeyDown}
                             onSearchKeyChange={this.handleSearchKeyChange}      
-                            handleSubmit={this.handleSubmit}              
+                            handleSubmit={this.handleSubmit}  
+                            loading={this.state.loading}            
                         />
                         <SearchSuggestion            
                             items={this.state.result.suggestions} 

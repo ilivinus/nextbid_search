@@ -36,3 +36,20 @@
     /* width:24px; */
     height:24px;
 }
+.loading-icon {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background: green;
+    border: 2px solid lightgreen;
+    border-radius: 50%;
+    bottom:2px;
+    right:14px;
+    top : 10px;    
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

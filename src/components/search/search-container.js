@@ -3,7 +3,7 @@ import SearchComponent from './search-component';
 import SearchResult from '../search-result';
 import SearchSuggestion from '../search-suggestion';
 import { debounce } from '../../utils/debounce';
-import c from '../../utils/constants';
+import c from '../../utils/config';
 import ApiService from '../../services/api-service';
 
 export default class SearchContainer extends Component {

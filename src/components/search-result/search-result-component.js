@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default  (props) => (
+export default  function SearchResult(props){
+    return (
             <div>
                 {props.items.map((val,idx) =>(
                 <div key={idx} className="card">
@@ -10,4 +11,4 @@ export default  (props) => (
                 </div>))}
             </div>
         );
-    
+}

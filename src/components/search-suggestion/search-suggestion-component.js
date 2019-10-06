@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SearchSuggestionComponent extends Component {
+export default function SearchSuggestionComponent (props){
 
-    //filter = (val,searchKey) => val.substr(0, searchKey.length).toUpperCase() === searchKey.toUpperCase();   
-    render(){
-
-        let { searchKey, suggested_items, current_focus, getSelectionLength, getInputRef, suggestionClick } = this.props;
+        let { searchKey, suggested_items, current_focus, getSelectionLength, getInputRef, suggestionClick } = props;
         let selection = suggested_items;//.filter(val => this.filter(val,searchKey));
         getSelectionLength(selection.length);
         
@@ -21,6 +18,5 @@ export default class SearchSuggestionComponent extends Component {
                 }                
             )}
             </div>
-        );
-    }
+        );  
 }

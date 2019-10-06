@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SearchComponent extends Component {   
-    render(){
-        return (
+export default function SearchComponent(props){
+            return (
             <div className="suggestion">
                 <input type="text" 
-                    className={this.props.anySuggestion ? "input-class" : ""}
-                    value={this.props.searchKey}
-                    onKeyDown={this.props.handleKeyDown}
-                    onChange={this.props.onSearchKeyChange} 
+                    className={props.anySuggestion ? "input-class" : ""}
+                    value={props.searchKey}
+                    onKeyDown={props.handleKeyDown}
+                    onChange={props.onSearchKeyChange} 
                     placeholder="Search" />
             </div>
         );
-    }
 }

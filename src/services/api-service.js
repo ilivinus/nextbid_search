@@ -1,4 +1,4 @@
-import config from '../utils/constants';
+import config from '../utils/config';
 
 class ApiService {
     constructor(baseUrl, queryString, paginatedQueryString) {

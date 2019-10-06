@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#App Should detect change in the App Component 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="search-container"
+  >
+    <p
+      className="search-header"
+    >
+      <img
+        alt="TheNextBid"
+        className="logo"
+        src="https://thenextbid.com/eeb9b1a373fc912868daaa578bb7ccc0.svg"
+      />
+      <strong>
+        Search Engine
+      </strong>
+    </p>
+    <form
+      autoComplete="off"
+    >
+      <div
+        className="suggestion"
+      >
+        <div
+          className="suggestion"
+        >
+          <input
+            className=""
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Search..."
+            type="text"
+            value=""
+          />
+          <button
+            className="sb-button"
+            onClick={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="suggestion-items"
+        />
+      </div>
+    </form>
+    <div />
+  </div>
+</div>
+`;

@@ -16,7 +16,7 @@ class ApiService {
         })
             .then(res => res.json())
             .then(result => this.getResult(result))
-            .catch(err => console.log(err.message));
+            .catch(err => err.message);
     }
 
     fetchPaginatedData(searchKey, start, limit) {
@@ -27,7 +27,7 @@ class ApiService {
         })
             .then(res => res.json())
             .then(result => this.getResult(result))
-            .catch(err => console.log(err.message));
+            .catch(err => err.message);
     }
     
     getResult(data) {

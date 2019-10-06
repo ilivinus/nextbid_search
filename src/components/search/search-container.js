@@ -13,30 +13,44 @@ export default class SearchContainer extends Component {
             search_key : "",
             keyCode : 0,
             result : {},
-            error : ""
+            error : "",
+            loading : false
         };
         this.handleSearchKeyChange = this.handleSearchKeyChange.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleSubmit  = this.handleSubmit.bind(this);
     }
     
     handleSearchKeyChange = evt =>{        
         let { value } = evt.target;
         this.setState({ search_key : value });
         debounce(() => {
+            this.setState({ loading : true });
             ApiService.fetchData(this.state.search_key)
-            .then(data => this.setState(prevState => ({ result : Object.assign({},prevState.result, data)})))
-            .catch(err => this.setState({ error : err }));            
+            .then(data => this.setState(prevState => ({ loading : false, result : Object.assign({},prevState.result, data)})))
+            .catch(err => {         
+                this.setState({ loading : false });
+                alert("Something went wrong")
+            });            
         },c.debounceWaitTime)()
     }
-
+    handleSubmit = evt =>{
+        this.setState({ loading : true });
+        ApiService.fetchData(this.state.search_key)
+        .then(data => this.setState(prevState => ({ loading : false, result : Object.assign({},prevState.result, data)})))
+        .catch(err => {         
+            this.setState({ loading : false });
+            alert("Something went wrong")
+        });
+    }
     handleKeyDown = (evt) => {
-        this.setState({ keyCode : evt.keyCode });
+        this.setState({ keyCode : evt.keyCode, error : "" });
     }
     render(){
         return (   
             <div className="search-container">        
                 <p className="search-header">
-                    <img alt="TheNextBid" src="https://thenextbid.com/eeb9b1a373fc912868daaa578bb7ccc0.svg" className="logo" />
+                    <img alt="TheNextBid" src={c.nextBidLogoUrl} className="logo" />
                     <strong>Search Engine</strong>
                 </p>
                 <form autoComplete="off">
@@ -45,7 +59,8 @@ export default class SearchContainer extends Component {
                             anySuggestion={(this.state.result.suggestions && this.state.result.suggestions.length > 0) ? true : false}
                             searchKey={this.state.search_key}
                             handleKeyDown={this.handleKeyDown}
-                            onSearchKeyChange={this.handleSearchKeyChange}                    
+                            onSearchKeyChange={this.handleSearchKeyChange}      
+                            handleSubmit={this.handleSubmit}              
                         />
                         <SearchSuggestion            
                             items={this.state.result.suggestions} 

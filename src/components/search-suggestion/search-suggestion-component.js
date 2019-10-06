@@ -4,6 +4,7 @@ export default function SearchSuggestionComponent (props){
 
         let { searchKey, suggested_items, current_focus, getSelectionLength, getInputRef, suggestionClick } = props;
         let selection = suggested_items;//.filter(val => this.filter(val,searchKey));
+        
         getSelectionLength(selection.length);
         
         return (

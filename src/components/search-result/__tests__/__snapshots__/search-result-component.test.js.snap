@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#SearchResultComponent Should take the snapshot of the component 1`] = `<div />`;

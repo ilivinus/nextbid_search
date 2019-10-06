@@ -39,7 +39,6 @@ exports[`#App Should detect change in the App Component 1`] = `
           <button
             className="sb-button"
             onClick={[Function]}
-            type="submit"
           >
             Submit
           </button>
